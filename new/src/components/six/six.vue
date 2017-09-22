@@ -40,16 +40,18 @@
     " swiper-animate-duration="0.5s" swiper-animate-delay="1.25s">
             <button class="btn" @click="submit">提交</button>
         </div>
-        <div class="toast" v-show="toastIsShow">
-            {{msg}}
-        </div>
+        <toast :isShow="toastIsShow" @closeToast="closeToast"></toast>
     </div>
 </template>
 
 <script>
 import { postData } from "../../api/index"
+import Toast from '../toast/toast.vue'
 export default {
     name: 'five',
+    components:{
+        Toast
+    },
     data() {
         return {
             tabIndex: 1, //0：个人； 1,：公司
@@ -60,7 +62,7 @@ export default {
             description:'',
             origin: '',
             openId: '',
-            toastIsShow: false,
+            toastIsShow: true,
             msg: '努力提交中...'
         }
     },
@@ -75,16 +77,12 @@ export default {
             if (!this.name && !this.mobile && !this.company && !this.position) {
                 this.msg = '请填写必要的信息'
                 this.toastIsShow = true
-                setTimeout(() => {
-                    this.toastIsShow = false
-                }, 1500)
                 return
             }
             postData(this.name, this.mobile, this.company, this.position, this.origin, this.openId).then((res) => {
                 this.msg = '提交成功！'
                 this.toastIsShow = true
                 setTimeout(() => {
-                    this.toastIsShow = false
                     this.name = ''
                     this.mobile = ''
                     this.company = ''
@@ -96,9 +94,6 @@ export default {
                 console.log(error)
                 this.msg = '提交失败！'
                 this.toastIsShow = true
-                setTimeout(() => {
-                    this.toastIsShow = false
-                }, 20)
             })
         },
         _getQueryString(name) {
@@ -106,6 +101,9 @@ export default {
             let r = window.location.search.substr(1).match(reg);
             if (r != null) return unescape(r[2]);
             return null;
+        },
+        closeToast(flag) {
+            this.toastIsShow = flag
         }
     }
 }
@@ -181,22 +179,5 @@ export default {
             font-size 32px
             border-radius 12px
             letter-spacing 16px
-    .toast
-        position absolute
-        z-index 1024
-        top 0 
-        right 0
-        bottom 0
-        left 0
-        width 400px
-        height 100px
-        text-align center
-        box-sizing border-box
-        padding 30px 60px
-        font-size 30px
-        margin auto auto
-        color #f6c84f
-        background rgba(0,0,0,0.8)
-        border-radius 20px
 </style>
 
