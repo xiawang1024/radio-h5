@@ -1,31 +1,55 @@
 <template>
-    <div class="three">
-        <div class="border-1 ani" swiper-animate-effect="bounceIn
+    <div class="five">
+        <div class="border-1 ani" swiper-animate-effect="bounceInDown
 " swiper-animate-duration="0.5s" swiper-animate-delay="0.5s"></div>
         <div class="border-2 ani" swiper-animate-effect="fadeIn
 " swiper-animate-duration="0.3s" swiper-animate-delay="0s"></div>
-        <div class="text-1 ani" swiper-animate-effect="zoomIn
-" swiper-animate-duration="0.75s" swiper-animate-delay="0.5s"></div>
-        <div class="text-2 ani" swiper-animate-effect="zoomIn
-" swiper-animate-duration="0.75s" swiper-animate-delay="0.75s"></div>
-        <div class="text-3 ani" swiper-animate-effect="bounceInLeft
-" swiper-animate-duration="0.75s" swiper-animate-delay="1s"></div>
-        <div class="text-4 ani" swiper-animate-effect="bounceInRight
-" swiper-animate-duration="0.75s" swiper-animate-delay="1.25s"></div>
-        <div class="text-5 ani" swiper-animate-effect="fadeInUp
-" swiper-animate-duration="0.75s" swiper-animate-delay="1.75s">咨询电话：0371-65889111</div>
+        <div class="title ani" swiper-animate-effect="bounceInDown
+" swiper-animate-duration="0.5s" swiper-animate-delay="0s">活动流程</div>
+        <div class="step-wrap">
+            <p class="step ani" swiper-animate-effect="flipInX
+" swiper-animate-duration="1s" swiper-animate-delay="0.5s">
+                <span class="time">14:30</span>
+                <span class="cont">签到入场及参观展区</span>
+            </p>
+            <p class="step ani" swiper-animate-effect="flipInX
+" swiper-animate-duration="1s" swiper-animate-delay="0.75s">
+                <span class="time">15:00</span>
+                <span class="cont">推介会正式开始</span>
+            </p>
+            <p class="step ani" swiper-animate-effect="flipInX
+" swiper-animate-duration="1s" swiper-animate-delay="1s">
+                <span class="time">15:02</span>
+                <span class="cont">领导致辞</span>
+            </p>
+            <p class="step ani" swiper-animate-effect="flipInX
+" swiper-animate-duration="1s" swiper-animate-delay="1.25s">
+                <span class="time">15:10</span>
+                <span class="cont">河南电台品牌价值分析</span>
+            </p>
+            <p class="step ani" swiper-animate-effect="flipInX
+" swiper-animate-duration="1s" swiper-animate-delay="1.5s">
+                <span class="time">15:30</span>
+                <span class="cont">各频率及新媒体品牌价值展示</span>
+            </p>
+            <p class="step ani" swiper-animate-effect="flipInX
+" swiper-animate-duration="1s" swiper-animate-delay="1.75s">
+                <span class="time">17:10</span>
+                <span class="cont">合影留念</span>
+            </p>
+        </div>
     </div>
 </template>
 
 <script>
 export default {
-
+    name:'five',
 }
 </script>
 
 <style lang="stylus" scoped>
 @import '~common/stylus/mixin.styl'
-.three
+.five
     fullpage()
     .border-1
         position absolute
@@ -43,44 +67,26 @@ export default {
         height 100%
         background url('./border.png') center center no-repeat
         background-size 90%
-    .text-1
-        position absolute
-        top 200px
-        left 0
-        width 100%
-        height 300px
-        background url('./0.png') center center no-repeat
-        background-size contain
-    .text-2
-        position absolute
-        top 500px
-        left 100px
-        width 100%
-        height 140px
-        background url('./1.png') center center no-repeat
-        background-size contain
-    .text-3
-        position absolute
-        top 640px
-        left -100px
-        width 100%
-        height 180px
-        background url('./2.png') center center no-repeat
-        background-size contain
-    .text-4
-        position absolute
-        top 800px
-        left 120px
-        width 100%
-        height 180px
-        background url('./3.png') center center no-repeat
-        background-size contain
-    .text-5
-        position absolute
-        top 1050px
-        width 100%
-        text-align center
+    .title
+        font-size 46px
         color #f6c84f
-        font-size 40px
+        text-align center 
+        padding-top 300px
+        letter-spacing 6px
+    .step-wrap
+        width 90%
+        margin 80px auto
+        box-sizing border-box
+        color #f6c84f
+        .step
+            width 100%
+            height 80px
+            font-size 36px
+            display flex
+            .time
+                flex 1
+                text-align center
+            .cont   
+                flex 3
 </style>
 
