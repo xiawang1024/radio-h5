@@ -2,13 +2,13 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import VueParticles from 'vue-particles'
+import XParticles from 'x-particles'
 import 'common/js/flexible.js'
 import 'common/stylus/index.styl'
 import 'common/css/swiper.min.css'
 import 'animate.css'
 
-Vue.use(VueParticles)
+Vue.use(XParticles)
 
 Vue.config.productionTip = false
 

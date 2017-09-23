@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        <vue-particles color="#fff"></vue-particles>
+        <x-particles id="particles-js" class="particles-background" :config="config"></x-particles>
         <div class="swiper-container" ref="swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -41,6 +41,9 @@ import Four from '@/components/four/four'
 import Five from '@/components/five/five'
 import Six from '@/components/six/six'
 
+// import defConfig from './config/snow.js'
+// import defConfig from './config/nasa.js'
+
 export default {
     name: 'home',
     components: {
@@ -53,8 +56,12 @@ export default {
     },
     data() {
         return {
-            isPlay:true
+            isPlay:true,
+            config:{}
         }
+    },
+    created() {
+        this.config = defConfig
     },
     mounted() {
         setTimeout(() => {
