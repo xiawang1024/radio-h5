@@ -5,6 +5,18 @@
     <meta charset="utf-8">
     <title>2017河南广播电视台广播品牌价值推介会</title>
     <!-- <script src="./static/js/directUrl.js"></script> -->
+    <script>
+        if (!getQueryString('openId')) {
+            window.location = "http://a.weixin.hndt.com/wx/index";
+        }
+
+        function getQueryString(name) {
+            let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            let r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+    </script>
 </head>
 
 <body>
@@ -13,7 +25,30 @@
     <script src="./static/js/swiper.min.js"></script>
     <script src="./static/js/swiper.animate.min.js"></script>
     <script src="./static/js/jweixin.js"></script>
-    <script src="./static/js/wxAutoPlay.js"></script>
+    <!-- <script src="./static/js/wxAutoPlay.js"></script> -->
+    <script>
+        window.onload = function() {
+            wx.config({
+                // 配置信息
+                debug: false,
+                appId: '',
+                timestamp: 1,
+                nonceStr: '',
+                signature: '',
+                jsApiList: []
+            });
+            wx.ready(() => {
+                // audioBtn.play();
+            });
+            (function audioAutoPlay() {
+                var audio = document.getElementById('audio');
+                audio.play();
+                document.addEventListener("WeixinJSBridgeReady", function() {
+                    audio.play();
+                }, false);
+            })();
+        }
+    </script>
 </body>
 
 </html>

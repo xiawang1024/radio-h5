@@ -40,7 +40,7 @@
     " swiper-animate-duration="0.5s" swiper-animate-delay="1.25s">
             <button class="btn" @click="submit">提交</button>
         </div>
-        <toast :isShow="toastIsShow" @closeToast="closeToast"></toast>
+        <toast :isShow="toastIsShow" :title="title" :msg="msg" @closeToast="closeToast"></toast>
     </div>
 </template>
 
@@ -62,8 +62,9 @@ export default {
             description:'',
             origin: '',
             openId: '',
-            toastIsShow: true,
-            msg: '努力提交中...'
+            toastIsShow: false,
+            title:'',
+            msg: ''
         }
     },
     mounted() {
@@ -75,13 +76,21 @@ export default {
         },
         submit() {
             if (!this.name && !this.mobile && !this.company && !this.position) {
-                this.msg = '请填写必要的信息'
+                this.title = '请填写必要的信息'
+                this.msg = ''
                 this.toastIsShow = true
                 return
             }
             postData(this.name, this.mobile, this.company, this.position, this.origin, this.openId).then((res) => {
-                this.msg = '提交成功！'
-                this.toastIsShow = true
+                if(true){
+                    this.title = '报名成功'
+                    this.msg = '温馨提示推介会签到：请务必使用报名微信扫描二维码入场签到，否则签到失败不得入场。'
+                    this.toastIsShow = true
+                }else{
+                    this.title = '报名失败'
+                    this.msg = '报名人数已满，敬请关注河南广播网10月17日推介会现场直播。'
+                    this.toastIsShow = true
+                }
                 setTimeout(() => {
                     this.name = ''
                     this.mobile = ''

@@ -1,4 +1,4 @@
-window.onload = function() {
+! function() {
     wx.config({
         // 配置信息
         debug: false,
@@ -18,4 +18,4 @@ window.onload = function() {
             audio.play();
         }, false);
     })();
-}
+}()

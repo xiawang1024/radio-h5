@@ -71,7 +71,7 @@ export default {
         font-size 46px
         color #f6c84f
         text-align center 
-        padding-top 300px
+        padding-top 260px
         letter-spacing 6px
     .step-wrap
         width 90%

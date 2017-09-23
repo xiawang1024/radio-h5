@@ -1,10 +1,12 @@
 <template>
-  <div class="toast ani" swiper-animate-effect="bounceInDown
-    " swiper-animate-duration="1s" swiper-animate-delay="0s" v-show="isShow">
-      <h2 class="title">报名成功</h2>
-      <p class="info">温馨提示推介会签到：请务必使用报名微信扫描二维码入场签到，否则签到失败不得入场。</p>
-      <button class="close" @click="closeToast">关闭</button>
-  </div>
+
+    <transition name="fade">
+        <div class="toast"  v-show="isShow">
+            <h2 class="title">{{title}}</h2>
+            <p class="info">{{msg}}</p>
+            <button class="close" @click="closeToast">关闭</button>
+        </div>
+    </transition>
 </template>
 
 <script>
@@ -33,6 +35,12 @@ export default {
 
 <style lang="stylus" scoped>
 @import '~common/stylus/mixin'
+.fade-enter-active, .fade-leave-active 
+    transition: opacity .5s
+
+.fade-enter, .fade-leave-to /* .fade-leave-active in below version 2.1.8 */ 
+    opacity: 0
+
 .toast  
     position absolute
     top 50%
@@ -62,7 +70,7 @@ export default {
         display block
         bottom 0
         width 100%
-        height 70px
+        height 80px
         background #0a90e3
         border none 
         outline none 

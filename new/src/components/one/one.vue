@@ -106,7 +106,7 @@ export default {
     .titlec
         position absolute
         left 0
-        top 540px
+        top 500px
         width 750px
         height 137px
         background url('./1.png') center center no-repeat
@@ -114,7 +114,7 @@ export default {
     .voice
         position absolute
         left 193px
-        bottom 300px
+        bottom 260px
         width 363px
         height 324px
         background url('./2.png') center center no-repeat
@@ -122,7 +122,7 @@ export default {
     .address
         position absolute
         left 185px
-        bottom 220px
+        bottom 160px
         width 379px
         height 69px
         background url('./3.png') center center no-repeat
@@ -130,7 +130,7 @@ export default {
     .desc
         position absolute
         left 0
-        bottom 160px
+        bottom 100px
         width 750px
         height 36px
         background url('./4.png') center center no-repeat

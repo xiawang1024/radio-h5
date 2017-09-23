@@ -26,7 +26,7 @@
         <div class="up-wrap">
 
         </div>
-        <div class="audio-wrap" @click="toggle">
+        <div class="audio-wrap" @click="toggle" :class="isPlay ? 'isPlay' : ''">
             <audio src="http://www.hndt.com/h5/promotion/static/mp3/mp3.mp3" class="audio" id="audio" autoplay loop></audio>
         </div>
 
@@ -53,7 +53,7 @@ export default {
     },
     data() {
         return {
-
+            isPlay:true
         }
     },
     mounted() {
@@ -80,8 +80,10 @@ export default {
         toggle() {
             if(this.audio.paused){
                 this.audio.play()
+                this.isPlay = true
             }else{
                 this.audio.pause()
+                this.isPlay = false
             }
         }
     }
@@ -147,9 +149,10 @@ export default {
     right 50px
     width 60px
     height 60px
-    animation rotate 2.5s linear infinite
     background url('./voice.svg') 
     background-size cover
+    &.isPlay
+        animation rotate 2.5s linear infinite
     .audio
         display none
 </style>

@@ -6,61 +6,61 @@
             <div class="border ani" swiper-animate-effect="wxRotate
 " swiper-animate-duration="0.7s" swiper-animate-delay="0.35s"></div>
             <div class="logo ani" swiper-animate-effect="rotateInDownLeft
-" swiper-animate-duration="0.3s" swiper-animate-delay="0.2s"></div>
+" swiper-animate-duration="1.75s" swiper-animate-delay="0.2s"></div>
         </div>
         <div class="two-2">
             <div class="border ani" swiper-animate-effect="wxRotate
 " swiper-animate-duration="0.7s" swiper-animate-delay="0.35s"></div>
             <div class="logo ani" swiper-animate-effect="rotateInDownLeft
-" swiper-animate-duration="0.3s" swiper-animate-delay="0.2s"></div>
+" swiper-animate-duration="1.75s" swiper-animate-delay="0.2s"></div>
         </div>
         <div class="two-3">
             <div class="border ani" swiper-animate-effect="wxRotate
 " swiper-animate-duration="0.7s" swiper-animate-delay="0.35s"></div>
             <div class="logo ani" swiper-animate-effect="rotateInDownLeft
-" swiper-animate-duration="0.3s" swiper-animate-delay="0.2s"></div>
+" swiper-animate-duration="1.75s" swiper-animate-delay="0.2s"></div>
         </div>
         <div class="two-4">
             <div class="border ani" swiper-animate-effect="wxRotate
 " swiper-animate-duration="0.7s" swiper-animate-delay="0.35s"></div>
             <div class="logo ani" swiper-animate-effect="rotateInDownLeft
-" swiper-animate-duration="0.3s" swiper-animate-delay="0.2s"></div>
+" swiper-animate-duration="1.75s" swiper-animate-delay="0.2s"></div>
         </div>
         <div class="two-5">
             <div class="border ani" swiper-animate-effect="wxRotate
 " swiper-animate-duration="0.7s" swiper-animate-delay="0.35s"></div>
             <div class="logo ani" swiper-animate-effect="rotateInDownLeft
-" swiper-animate-duration="0.3s" swiper-animate-delay="0.2s"></div>
+" swiper-animate-duration="1.75s" swiper-animate-delay="0.2s"></div>
         </div>
         <div class="two-6">
             <div class="border ani" swiper-animate-effect="wxRotate
 " swiper-animate-duration="0.7s" swiper-animate-delay="0.35s"></div>
             <div class="logo ani" swiper-animate-effect="rotateInDownLeft
-" swiper-animate-duration="0.3s" swiper-animate-delay="0.2s"></div>
+" swiper-animate-duration="1.75s" swiper-animate-delay="0.2s"></div>
         </div>
         <div class="two-7">
             <div class="border ani" swiper-animate-effect="wxRotate
 " swiper-animate-duration="0.7s" swiper-animate-delay="0.35s"></div>
             <div class="logo ani" swiper-animate-effect="rotateInDownLeft
-" swiper-animate-duration="0.3s" swiper-animate-delay="0.2s"></div>
+" swiper-animate-duration="1.75s" swiper-animate-delay="0.2s"></div>
         </div>
         <div class="two-8">
             <div class="border ani" swiper-animate-effect="wxRotate
 " swiper-animate-duration="0.7s" swiper-animate-delay="0.35s"></div>
             <div class="logo ani" swiper-animate-effect="rotateInDownLeft
-" swiper-animate-duration="0.3s" swiper-animate-delay="0.2s"></div>
+" swiper-animate-duration="1.75s" swiper-animate-delay="0.2s"></div>
         </div>
         <div class="two-9">
             <div class="border ani" swiper-animate-effect="wxRotate
 " swiper-animate-duration="0.7s" swiper-animate-delay="0.35s"></div>
             <div class="logo ani" swiper-animate-effect="rotateInDownLeft
-" swiper-animate-duration="0.3s" swiper-animate-delay="0.2s"></div>
+" swiper-animate-duration="1.75s" swiper-animate-delay="0.2s"></div>
         </div>
         <div class="two-10">
             <div class="border ani" swiper-animate-effect="wxRotate
 " swiper-animate-duration="0.7s" swiper-animate-delay="0.35s"></div>
             <div class="logo ani" swiper-animate-effect="rotateInDownLeft
-" swiper-animate-duration="0.3s" swiper-animate-delay="0.2s"></div>
+" swiper-animate-duration="1.75s" swiper-animate-delay="0.2s"></div>
         </div>
         <div class="text-wrap">
             <div class="border ani" swiper-animate-effect="bounceInLeft
@@ -87,10 +87,10 @@ export default {
         left 0
         fullpage()
         background url('./bg.png') center center no-repeat
-        background-size 90%
+        background-size 90% 85%
     .two-1
         position absolute
-        top 80px
+        top 60px
         left 50px
         .border
             position absolute
@@ -102,15 +102,15 @@ export default {
             background-size cover
         .logo
             position absolute
-            top 22px
-            left 22px
-            width 2*40px
-            height 2*40px
+            top 20px
+            left 6px
+            width 2*60px
+            height 2*48px
             background url('./0.png') center center no-repeat
-            background-size cover
+            background-size 1.2rem
     .two-2
         position absolute
-        top 370px
+        top 340px
         left 20px
         .border
             position absolute
@@ -123,14 +123,14 @@ export default {
         .logo
             position absolute
             top 20px
-            left 20px
-            width 2*45px
-            height 2*45px
+            left 6px
+            width 2*58px
+            height 2*55px
             background url('./1.png') center center no-repeat
-            background-size cover
+            background-size 1.1rem
     .two-3
         position absolute
-        top 320px
+        top 280px
         left 240px
         .border
             position absolute
@@ -142,15 +142,15 @@ export default {
             background-size cover
         .logo
             position absolute
-            top 36px
-            left 24px
-            width 2*38px
-            height 2*25px
+            top 20px
+            left 0px
+            width 2*67px
+            height 2*43px
             background url('./2.png') center center no-repeat
-            background-size cover
+            background-size 1.1rem
     .two-4
         position absolute
-        top 200px
+        top 140px
         left 460px
         .border
             position absolute
@@ -162,16 +162,16 @@ export default {
             background-size cover
         .logo
             position absolute
-            top 32px
-            left 23px
-            width 2*37px
-            height 2*34px
+            top 10px
+            left 2px
+            width 2*60px
+            height 2*56px
             background url('./3.png') center center no-repeat
-            background-size cover
+            background-size 0.95rem
     .two-5
         position absolute
-        top 460px
-        left 580px
+        top 420px
+        left 560px
         .border
             position absolute
             top 0
@@ -182,15 +182,15 @@ export default {
             background-size cover
         .logo
             position absolute
-            top 50px
-            left 24px
-            width 2*39px
-            height 2*17px
+            top 30px
+            left -8px
+            width 2*72px
+            height 2*33px
             background url('./4.png') center center no-repeat
-            background-size cover
+            background-size 1.2rem
     .two-6
         position absolute
-        top 600px
+        top 560px
         left 320px
         .border
             position absolute
@@ -202,15 +202,15 @@ export default {
             background-size cover
         .logo
             position absolute
-            top 46px
-            left 26px
-            width 2*36px
-            height 2*18px
+            top 36px
+            left -8px
+            width 2*70px
+            height 2*30px
             background url('./5.png') center center no-repeat
-            background-size cover
+            background-size 1.2rem
     .two-7
         position absolute
-        top 680px
+        top 640px
         left 40px
         .border
             position absolute
@@ -222,15 +222,15 @@ export default {
             background-size cover
         .logo
             position absolute
-            top 46px
-            left 20px
-            width 2*44px
-            height 2*22px
+            top 38px
+            left -10px
+            width 2*73px
+            height 2*27px
             background url('./6.png') center center no-repeat
-            background-size cover
+            background-size 1.6rem
     .two-8
         position absolute
-        top 950px
+        top 900px
         left 30px
         .border
             position absolute
@@ -242,16 +242,16 @@ export default {
             background-size cover
         .logo
             position absolute
-            top 30px
-            left 26px
-            width 2*39px
-            height 2*32px
+            top 8px
+            left -4px
+            width 2*67px
+            height 2*55px
             background url('./7.png') center center no-repeat
-            background-size cover
+            background-size 1.3rem
     .two-9
         position absolute
-        top 980px
-        left 280px
+        top 920px
+        left 300px
         .border
             position absolute
             top 0
@@ -262,12 +262,12 @@ export default {
             background-size cover
         .logo
             position absolute
-            top 30px
-            left 30px
-            width 2*34px
-            height 2*36px
+            top 10px
+            left 6px
+            width 2*56px
+            height 2*59px
             background url('./8.png') center center no-repeat
-            background-size cover
+            background-size 1.0rem
     .two-10
         position absolute
         top 820px
@@ -282,15 +282,15 @@ export default {
             background-size cover
         .logo
             position absolute
-            top 32px
-            left 32px
-            width 2*31px
-            height 2*31px
+            top 10px
+            left 10px
+            width 2*54px
+            height 2*57px
             background url('./9.png') center center no-repeat
-            background-size cover
+            background-size 1.0rem
     .text-wrap
         position absolute
-        bottom 60px
+        bottom 30px
         width 100%
         height 70px
         .border 
