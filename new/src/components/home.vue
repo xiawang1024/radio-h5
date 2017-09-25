@@ -61,7 +61,7 @@ export default {
         }
     },
     created() {
-        this.config = defConfig
+        // this.config = defConfig
     },
     mounted() {
         setTimeout(() => {

@@ -3,7 +3,7 @@
     <transition name="fade">
         <div class="toast"  v-show="isShow">
             <h2 class="title">{{title}}</h2>
-            <p class="info">{{msg}}</p>
+            <p class="info" v-html="msg"></p>
             <button class="close" @click="closeToast">关闭</button>
         </div>
     </transition>
@@ -60,8 +60,8 @@ export default {
         font-size 36px
         line-height 2
     .info
-        padding 20px 20px 90px
-        line-height 1.6
+        padding 20px 10px 90px
+        line-height 1.75
         text-indent 2em
         overflow hidden
         font-size 30px

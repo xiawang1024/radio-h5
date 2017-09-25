@@ -64,7 +64,10 @@ export default {
             openId: '',
             toastIsShow: false,
             title:'',
-            msg: ''
+            msg: '',
+            isFirstSubmit:true,
+            successMsg:'<p>温馨提示推介会签到：请务必使用报名微信扫描二维码入场签到，否则签到失败不得入场。</p><p>地点：河南人民会堂</p><p>时间：2017年10月17日</p><p>活动流程：</p><p>14:30---签到入场及参观展区</p><p>15:00---推介会正式开始</p><p>15:02---领导致辞</p><p>15:10---河南电台品牌价值分析解读</p><p>15:30---各频率及新媒体品牌价值展示</p><p>17:10---合影留念</p>',
+            failMsg: '<p>报名人数已满，敬请关注河南广播网10月17日推介会现场直播。</p>'
         }
     },
     mounted() {
@@ -75,6 +78,12 @@ export default {
             this.tabIndex = index
         },
         submit() {
+            if(!this.isFirstSubmit) {
+                this.title = '请不要重复提交'
+                this.msg = '关注河南广播网了解更多信息'
+                this.toastIsShow = true
+                return 
+            }
             if (!this.name && !this.mobile && !this.company && !this.position) {
                 this.title = '请填写必要的信息'
                 this.msg = ''
@@ -82,27 +91,37 @@ export default {
                 return
             }
             postData(this.name, this.mobile, this.company, this.position, this.origin, this.openId).then((res) => {
+                let status = res.data.status;
                 if(true){
                     this.title = '报名成功'
-                    this.msg = '温馨提示推介会签到：请务必使用报名微信扫描二维码入场签到，否则签到失败不得入场。'
+                    this.msg = this.successMsg;
                     this.toastIsShow = true
                 }else{
                     this.title = '报名失败'
-                    this.msg = '报名人数已满，敬请关注河南广播网10月17日推介会现场直播。'
+                    this.msg = this.failMsg
                     this.toastIsShow = true
                 }
-                setTimeout(() => {
-                    this.name = ''
-                    this.mobile = ''
-                    this.company = ''
-                    this.position = ''
-                }, 1500)
+
+                this.isFirstSubmit = false;
+                // setTimeout(() => {
+                //     this.name = ''
+                //     this.mobile = ''
+                //     this.company = ''
+                //     this.position = ''
+                // }, 1500)
 
 
             }).catch((error) => {
                 console.log(error)
-                this.msg = '提交失败！'
+                this.title = '报名失败'
+                this.msg = this.failMsg;
                 this.toastIsShow = true
+                // setTimeout(() => {
+                //     this.name = ''
+                //     this.mobile = ''
+                //     this.company = ''
+                //     this.position = ''
+                // }, 1500)
             })
         },
         _getQueryString(name) {
