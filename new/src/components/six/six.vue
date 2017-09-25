@@ -30,7 +30,12 @@
                     <input type="text" class="ipt" v-model="position">
                 </p>
                 <p class="beizhu ani" swiper-animate-effect="bounceInLeft
-    " swiper-animate-duration="0.5s" swiper-animate-delay="1.5s" >
+    " swiper-animate-duration="0.5s" swiper-animate-delay="1s" v-show="tabIndex == 0">
+                    <span class="text">备注</span>
+                    <input type="text" class="ipt" v-model="description">
+                </p>
+                <p class="beizhu ani" swiper-animate-effect="bounceInLeft
+    " swiper-animate-duration="0.5s" swiper-animate-delay="1.5s" v-show="tabIndex == 1">
                     <span class="text">备注</span>
                     <input type="text" class="ipt" v-model="description">
                 </p>

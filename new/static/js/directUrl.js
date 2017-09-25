@@ -1,6 +1,9 @@
  ! function() {
+     //  if (!getQueryString('openId')) {
+     //      window.location = "http://a.weixin.hndt.com/wx/index?cate=person";
+     //  }
      if (!getQueryString('openId')) {
-         window.location = "http://a.weixin.hndt.com/wx/index";
+         window.location = "http://a.weixin.hndt.com/wx/index?cate=company";
      }
 
      function getQueryString(name) {
