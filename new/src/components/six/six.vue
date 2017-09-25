@@ -96,8 +96,11 @@ export default {
                 return
             }
             postData(this.name, this.mobile, this.company, this.position, this.origin, this.openId).then((res) => {
+                // console.log('------------------------------------');
+                // console.log('------------------------------------');
                 let status = res.data.status;
-                if(true){
+                console.log(status);
+                if(status == 1){
                     this.title = '报名成功'
                     this.msg = this.successMsg;
                     this.toastIsShow = true
@@ -196,7 +199,7 @@ export default {
                     height 100%
                     font-size 36px
     .submit
-        position absolute
+        // position absolute
         bottom 200px
         left 75px
         width 600px
