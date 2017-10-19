@@ -9,32 +9,32 @@
         <div class="step-wrap">
             <p class="step ani" swiper-animate-effect="flipInX
 " swiper-animate-duration="1s" swiper-animate-delay="0.5s">
-                <span class="time">14:30</span>
+                <span class="time">14:00</span>
                 <span class="cont">签到入场及参观展区</span>
             </p>
             <p class="step ani" swiper-animate-effect="flipInX
 " swiper-animate-duration="1s" swiper-animate-delay="0.75s">
-                <span class="time">15:00</span>
+                <span class="time">14:30</span>
                 <span class="cont">推介会正式开始</span>
             </p>
             <p class="step ani" swiper-animate-effect="flipInX
 " swiper-animate-duration="1s" swiper-animate-delay="1s">
-                <span class="time">15:02</span>
+                <span class="time">14:32</span>
                 <span class="cont">领导致辞</span>
             </p>
             <p class="step ani" swiper-animate-effect="flipInX
 " swiper-animate-duration="1s" swiper-animate-delay="1.25s">
-                <span class="time">15:10</span>
-                <span class="cont">河南电台品牌价值分析</span>
+                <span class="time">14:40</span>
+                <span class="cont">数据专家对河南电台品牌价值进行分析解读</span>
             </p>
             <p class="step ani" swiper-animate-effect="flipInX
 " swiper-animate-duration="1s" swiper-animate-delay="1.5s">
-                <span class="time">15:30</span>
+                <span class="time">15:00</span>
                 <span class="cont">各频率及新媒体品牌价值展示</span>
             </p>
             <p class="step ani" swiper-animate-effect="flipInX
 " swiper-animate-duration="1s" swiper-animate-delay="1.75s">
-                <span class="time">17:10</span>
+                <span class="time">16:40</span>
                 <span class="cont">合影留念</span>
             </p>
         </div>
@@ -80,13 +80,16 @@ export default {
         color #f6c84f
         .step
             width 100%
-            height 80px
+            // height 80px
             font-size 36px
             display flex
+            padding 18px 30px 18px 0
+            line-height 1.4
             .time
                 flex 1
                 text-align center
             .cont   
                 flex 3
+
 </style>
 

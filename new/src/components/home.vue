@@ -16,10 +16,10 @@
                     <four></four>
                 </div>
                 <div class="swiper-slide">
-                    <five></five>
+                    <six></six>
                 </div>
                 <div class="swiper-slide">
-                    <six></six>
+                    <five></five>
                 </div>
             </div>
         </div>

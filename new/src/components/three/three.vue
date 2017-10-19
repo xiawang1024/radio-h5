@@ -9,7 +9,7 @@
         <div class="text-2 ani" swiper-animate-effect="bounceInLeft
 " swiper-animate-duration="0.7s" swiper-animate-delay="1s"></div>
         <div class="text-3 ani" swiper-animate-effect="lightSpeedIn
-" swiper-animate-duration="0.7s" swiper-animate-delay="1.25s">10月17日</div>
+" swiper-animate-duration="0.7s" swiper-animate-delay="1.25s">11月8日</div>
         <div class="text-4 ani" swiper-animate-effect="lightSpeedIn
 " swiper-animate-duration="0.7s" swiper-animate-delay="1.75s">河南人民会堂</div>
     </div>

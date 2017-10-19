@@ -242,12 +242,12 @@ export default {
             background-size cover
         .logo
             position absolute
-            top 8px
-            left -4px
-            width 2*67px
-            height 2*55px
+            top -6px
+            left 2px
+            width 120px
+            height 146px
             background url('./7.png') center center no-repeat
-            background-size 1.3rem
+            background-size 1rem
     .two-9
         position absolute
         top 920px

@@ -21,7 +21,7 @@
                 </p>
                 <p class="company ani" swiper-animate-effect="bounceInLeft
     " swiper-animate-duration="0.5s" swiper-animate-delay="1s" v-show="tabIndex == 1">
-                    <span class="text">公司</span>
+                    <span class="text">单位</span>
                     <input type="text" class="ipt" v-model="company">
                 </p>
                 <p class="job ani" swiper-animate-effect="bounceInLeft
@@ -46,6 +46,7 @@
             <button class="btn" @click="submit">提交</button>
         </div>
         <toast :isShow="toastIsShow" :title="title" :msg="msg" @closeToast="closeToast"></toast>
+        <!-- <toast :isShow="true" :title="title" :msg="successMsg" @closeToast="closeToast"></toast> -->
     </div>
 </template>
 
@@ -71,8 +72,8 @@ export default {
             title:'',
             msg: '',
             isFirstSubmit:true,
-            successMsg:'<p>温馨提示推介会签到：请务必使用报名微信扫描二维码入场签到，否则签到失败不得入场。</p><p>地点：河南人民会堂</p><p>时间：2017年10月17日</p><p>活动流程：</p><p>14:30---签到入场及参观展区</p><p>15:00---推介会正式开始</p><p>15:02---领导致辞</p><p>15:10---河南电台品牌价值分析解读</p><p>15:30---各频率及新媒体品牌价值展示</p><p>17:10---合影留念</p>',
-            failMsg: '<p>报名人数已满，敬请关注河南广播网10月17日推介会现场直播。</p>'
+            successMsg:'<p>温馨提示推介会签到：请务必使用报名微信扫描二维码入场签到，否则签到失败不得入场。</p><p>地点：河南人民会堂</p><p>时间：2017年11月08日</p><p>活动流程：</p><p>14:00---签到入场及参观展区</p><p>14:30---推介会正式开始</p><p>14:32---领导致辞</p><p>14:40---数据专家对河南电台品牌价值进行分析解读</p><p>15:00---各频率及新媒体品牌价值展示</p><p>16:40---合影留念</p>',
+            failMsg: '<p>报名人数已满，敬请关注河南广播网11月08日推介会现场直播。</p>'
         }
     },
     mounted() {
