@@ -25,7 +25,7 @@
             <p class="step ani" swiper-animate-effect="flipInX
 " swiper-animate-duration="1s" swiper-animate-delay="1.25s">
                 <span class="time">14:40</span>
-                <span class="cont">数据专家对河南电台品牌价值进行分析解读</span>
+                <span class="cont">数据专家对河南广播品牌价值进行分析解读</span>
             </p>
             <p class="step ani" swiper-animate-effect="flipInX
 " swiper-animate-duration="1s" swiper-animate-delay="1.5s">
