@@ -1,66 +1,65 @@
 <template>
     <div class="five">
-        <div class="title ani" swiper-animate-effect="bounceInDown
-    " swiper-animate-duration="0.5s" swiper-animate-delay="0s">接受邀请</div>
-        <!-- <div class="tab-wrap ani" swiper-animate-effect="bounceInLeft
-    " swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">
-            <div class="tab" :class="tabIndex == 0 ? 'z-crt' : ''" @click="setTabIndex(0)">个人</div>
-            <div class="tab" :class="tabIndex == 1 ? 'z-crt' : ''" @click="setTabIndex(1)">公司</div>
-        </div> -->
-        <div class="tab-cont">
-            <form class="form">
-                <p class="name ani" swiper-animate-effect="bounceInLeft
-    " swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">
-                    <span class="text">姓名</span>
-                    <input type="text" class="ipt" v-model="name">
-                </p>
-                <p class="tel ani" swiper-animate-effect="bounceInLeft
-    " swiper-animate-duration="0.5s" swiper-animate-delay="0.75s">
-                    <span class="text">电话</span>
-                    <input type="tel" class="ipt" v-model="mobile">
-                </p>
-                <p class="company ani" swiper-animate-effect="bounceInLeft
-    " swiper-animate-duration="0.5s" swiper-animate-delay="1s" v-show="tabIndex == 1">
-                    <span class="text">单位</span>
-                    <input type="text" class="ipt" v-model="company">
-                </p>
-                <p class="job ani" swiper-animate-effect="bounceInLeft
-    " swiper-animate-duration="0.5s" swiper-animate-delay="1.25s" v-show="tabIndex == 1">
-                    <span class="text">职务</span>
-                    <input type="text" class="ipt" v-model="position">
-                </p>
-                <p class="beizhu ani" swiper-animate-effect="bounceInLeft
-    " swiper-animate-duration="0.5s" swiper-animate-delay="1s" v-show="tabIndex == 0">
-                    <span class="text">备注</span>
-                    <input type="text" class="ipt" v-model="description">
-                </p>
-                <p class="beizhu ani" swiper-animate-effect="bounceInLeft
-    " swiper-animate-duration="0.5s" swiper-animate-delay="1.5s" v-show="tabIndex == 1">
-                    <span class="text">备注</span>
-                    <input type="text" class="ipt" v-model="description">
-                </p>
-            </form>
-        </div>
-        <div class="submit ani" swiper-animate-effect="bounceIn
-    " swiper-animate-duration="0.5s" swiper-animate-delay="1.25s">
-            <button class="btn" @click="submit">提交</button>
+        <div v-if="!toastIsShowc">
+            <div class="title ani" swiper-animate-effect="bounceInDown
+        " swiper-animate-duration="0.5s" swiper-animate-delay="0s">接受邀请</div>
+            <div class="tab-cont">
+                <form class="form">
+                    <p class="name ani" swiper-animate-effect="bounceInLeft
+        " swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">
+                        <span class="text">姓名</span>
+                        <input type="text" class="ipt" v-model="name">
+                    </p>
+                    <p class="tel ani" swiper-animate-effect="bounceInLeft
+        " swiper-animate-duration="0.5s" swiper-animate-delay="0.75s">
+                        <span class="text">电话</span>
+                        <input type="tel" class="ipt" v-model="mobile">
+                    </p>
+                    <p class="company ani" swiper-animate-effect="bounceInLeft
+        " swiper-animate-duration="0.5s" swiper-animate-delay="1s" v-show="tabIndex == 1">
+                        <span class="text">单位</span>
+                        <input type="text" class="ipt" v-model="company">
+                    </p>
+                    <!-- <p class="job ani" swiper-animate-effect="bounceInLeft
+        " swiper-animate-duration="0.5s" swiper-animate-delay="1.25s" v-show="tabIndex == 1">
+                        <span class="text">职务</span>
+                        <input type="text" class="ipt" v-model="position">
+                    </p> -->
+                    <p class="beizhu ani" swiper-animate-effect="bounceInLeft
+        " swiper-animate-duration="0.5s" swiper-animate-delay="1s" v-show="tabIndex == 0">
+                        <span class="text">备注</span>
+                        <input type="text" class="ipt" v-model="description">
+                    </p>
+                    <p class="beizhu ani" swiper-animate-effect="bounceInLeft
+        " swiper-animate-duration="0.5s" swiper-animate-delay="1.5s" v-show="tabIndex == 1">
+                        <span class="text">备注</span>
+                        <input type="text" class="ipt" v-model="description">
+                    </p>
+                </form>
+            </div>
+            <div class="submit ani" swiper-animate-effect="bounceIn
+        " swiper-animate-duration="0.5s" swiper-animate-delay="1.25s">
+                <button class="btn" @click="submit">提交</button>
+            </div>
         </div>
         <toast :isShow="toastIsShow" :title="title" :msg="msg" @closeToast="closeToast"></toast>
-        <!-- <toast :isShow="true" :title="title" :msg="successMsg" @closeToast="closeToast"></toast> -->
+        <toasting :isShow="toastIsShowc" :title="titlec" :msg="msgc" ></toasting>
     </div>
 </template>
 
 <script>
-import { postData } from "../../api/index"
+import { postData, checkOpenId } from "../../api/index"
 import Toast from '../toast/toast.vue'
+import Toasting from '../toast/toasting.vue'
 export default {
     name: 'five',
     components:{
-        Toast
+        Toast,
+        Toasting
     },
     data() {
         return {
-            tabIndex: 0, //0：个人； 1,：公司
+            tabIndex: 1, //0：个人； 1,：公司
             name: '',
             mobile: '',
             company: '',
@@ -71,14 +70,30 @@ export default {
             toastIsShow: false,
             title:'',
             msg: '',
+            toastIsShowc: false,
+            titlec:'',
+            msgc: '',
             isFirstSubmit:true,
             successMsg:'<p>温馨提示推介会签到：请务必使用报名微信扫描二维码入场签到，否则签到失败不得入场。</p><p>地点：河南人民会堂</p><p>时间：2017年11月08日</p><p>活动流程：</p><p>14:00---签到入场及参观展区</p><p>14:30---推介会正式开始</p><p>14:32---领导致辞</p><p>14:40---数据专家对河南广播品牌价值进行分析解读</p><p>15:00---各频率及新媒体品牌价值展示</p><p>16:40---合影留念</p>',
-            failMsg: '<p>报名人数已满，敬请关注河南广播网11月08日推介会现场直播。</p>'
+            failMsg: '<p>报名人数已满，敬请关注河南广播网<br/>11月08日推介会现场直播。</p>'
         }
     },
-    mounted() {
+    created () {
         this.openId = this._getQueryString('openId')
-    },
+        checkOpenId(this.openId).then((res) => {
+            let data = res.data
+            if(data.status == 1) {
+                this.titlec = '报名成功'
+                this.msgc = this.successMsg;
+                this.toastIsShowc = true
+                this.$nextTick(() => {
+
+                })
+            }else{
+                this.toastIsShowc = false
+            }
+        })
+    }, 
     methods: {
         setTabIndex(index) {
             this.tabIndex = index
@@ -90,21 +105,36 @@ export default {
                 this.toastIsShow = true
                 return 
             }
-            if (!this.name && !this.mobile && !this.company && !this.position) {
-                this.title = '请填写必要的信息'
+            if(!this.name) {
+                this.title = '请填写姓名！'
                 this.msg = ''
-                this.toastIsShow = true
+                this.toastIsShow = true;
+                return
+            }
+            if(!this.mobile) {
+                this.title = '请填写手机号！'
+                this.msg = ''
+                this.toastIsShow = true;
+                return
+            }
+            if(!this._checkPhone(this.mobile)) {
+                this.title = '请填写正确的手机号！'
+                this.msg = ''
+                this.toastIsShow = true;
+                return
+            }
+            if(!this.company) {
+                this.title = '请填写单位！'
+                this.msg = ''
+                this.toastIsShow = true;
                 return
             }
             postData(this.name, this.mobile, this.company, this.position, this.origin, this.openId).then((res) => {
-                // console.log('------------------------------------');
-                // console.log('------------------------------------');
                 let status = res.data.status;
-                console.log(status);
                 if(status == 1){
-                    this.title = '报名成功'
-                    this.msg = this.successMsg;
-                    this.toastIsShow = true
+                    this.titlec = '报名成功'
+                    this.msgc = this.successMsg;
+                    this.toastIsShowc = true
                 }else{
                     this.title = '报名失败'
                     this.msg = this.failMsg
@@ -138,6 +168,13 @@ export default {
             let r = window.location.search.substr(1).match(reg);
             if (r != null) return unescape(r[2]);
             return null;
+        },
+        _checkPhone(phone) { 
+            if(!(/^1[34578]\d{9}$/.test(phone))){                 
+                return false; 
+            }else{
+                return true
+            }
         },
         closeToast(flag) {
             this.toastIsShow = flag
