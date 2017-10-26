@@ -1,10 +1,10 @@
  ! function() {
-     if (!getQueryString('openId')) {
-         window.location = "http://a.weixin.hndt.com/wx/index?cate=person";
-     }
      //  if (!getQueryString('openId')) {
-     //      window.location = "http://a.weixin.hndt.com/wx/index?cate=company";
+     //      window.location = "http://a.weixin.hndt.com/wx/index?cate=person";
      //  }
+     if (!getQueryString('openId')) {
+         window.location = "http://a.weixin.hndt.com/wx/index?cate=company";
+     }
 
      function getQueryString(name) {
          let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
